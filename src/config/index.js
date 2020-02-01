@@ -1,3 +1,5 @@
+import React from "react"
+
 export const navigation = [
   {
     text: `professional`,
@@ -5,5 +7,10 @@ export const navigation = [
   },
 ]
 
-export const title = `Hi, I’m Dan.
-Front end developer & Cheerleader.`
+export const title = (
+  <>
+    Hi, I’m Dan.
+    <br />
+    Front end developer & Cheerleader.
+  </>
+)

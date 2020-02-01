@@ -1,9 +1,12 @@
-import React, { createContext, useState, useContext } from "react"
+import React, { createContext, useContext } from "react"
+import createPersistedState from "use-persisted-state"
+
+const usePersistedState = createPersistedState("state", sessionStorage)
 
 export const StateContext = createContext()
 
 export const StateProvider = ({ initialState, children }) => (
-  <StateContext.Provider value={useState(initialState)}>
+  <StateContext.Provider value={usePersistedState(initialState)}>
     {children}
   </StateContext.Provider>
 )

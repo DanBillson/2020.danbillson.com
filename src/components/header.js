@@ -37,6 +37,7 @@ const HeaderWrapper = styled.header`
   padding: 30px 0;
   background-color: ${props => props.theme.bg};
   color: ${props => props.theme.fg};
+  transition: background-color 0.3s, color 0.3s;
 
   svg {
     width: 36px;
