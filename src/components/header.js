@@ -1,42 +1,67 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import styled from "styled-components"
+import { useStateValue } from "../contexts/state"
+import ScrollProgress from "./scrollProgress"
+import Sun from "../images/sun.svg"
+import Moon from "../images/moon.svg"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+const Header = () => {
+  const [theme, setTheme] = useStateValue()
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+  const renderThemeIcon = () =>
+    theme === "dark" ? (
+      <Sun onClick={() => setTheme("light")} />
+    ) : (
+      <Moon onClick={() => setTheme("dark")} />
+    )
 
-Header.defaultProps = {
-  siteTitle: ``,
+  return (
+    <>
+      <HeaderWrapper>
+        <HeaderBody>
+          <Logo>
+            DanBillson<Highlight>.</Highlight>
+          </Logo>
+          <Nav>{renderThemeIcon()}</Nav>
+        </HeaderBody>
+      </HeaderWrapper>
+      <ScrollProgress />
+    </>
+  )
 }
 
 export default Header
+
+const HeaderWrapper = styled.header`
+  width: 100%;
+  padding: 30px 0;
+  background-color: ${props => props.theme.bg};
+  color: ${props => props.theme.fg};
+
+  svg {
+    width: 36px;
+    fill: ${props => props.theme.fg};
+    cursor: pointer;
+  }
+`
+
+const HeaderBody = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1600px;
+  padding: 0 5%;
+`
+
+const Nav = styled.nav`
+  display: flex;
+`
+
+const Logo = styled.span`
+  font-size: 36px;
+  font-weight: 900;
+`
+
+const Highlight = styled.span`
+  color: ${props => props.theme.primary};
+`
