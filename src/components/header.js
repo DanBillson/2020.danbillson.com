@@ -16,23 +16,29 @@ const Header = () => {
     )
 
   return (
-    <>
-      <HeaderWrapper>
-        <HeaderBody>
+    <Container>
+      <Wrapper>
+        <Body>
           <Logo>
             DanBillson<Highlight>.</Highlight>
           </Logo>
           <Nav>{renderThemeIcon()}</Nav>
-        </HeaderBody>
-      </HeaderWrapper>
+        </Body>
+      </Wrapper>
       <ScrollProgress />
-    </>
+    </Container>
   )
 }
 
 export default Header
 
-const HeaderWrapper = styled.header`
+const Container = styled.div`
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+`
+
+const Wrapper = styled.header`
   width: 100%;
   padding: 30px 0;
   background-color: ${props => props.theme.bg};
@@ -43,15 +49,21 @@ const HeaderWrapper = styled.header`
     width: 36px;
     fill: ${props => props.theme.fg};
     cursor: pointer;
+    tranisition: 0.2s ease-in-out;
+
+    &:hover {
+      fill: ${props => props.theme.secondary};
+    }
   }
 `
 
-const HeaderBody = styled.div`
+const Body = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1600px;
+  margin: 0 auto;
   padding: 0 5%;
+  max-width: 1600px;
 `
 
 const Nav = styled.nav`

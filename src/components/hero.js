@@ -1,9 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import { title } from "../config"
 import Dev from "../images/dev.svg"
 
-const Hero = () => {
+const Hero = ({ title }) => {
   return (
     <HeroWrapper>
       <HeroBody>
@@ -17,11 +16,7 @@ const Hero = () => {
 export default Hero
 
 const HeroWrapper = styled.div`
-  width: 100%;
   height: 85vh;
-  background-color: ${props => props.theme.bg};
-  color: ${props => props.theme.fg};
-  transition: background-color 0.3s, color 0.3s;
 `
 
 const HeroBody = styled.div`

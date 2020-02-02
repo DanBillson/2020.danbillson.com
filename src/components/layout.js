@@ -1,6 +1,8 @@
 import React from "react"
 import { createGlobalStyle } from "styled-components"
 import Header from "./header"
+import Main from "./main"
+import Footer from "./footer"
 import { StateProvider } from "../contexts/state"
 import { AppThemeProvider } from "../contexts/theme"
 
@@ -10,7 +12,8 @@ const Layout = ({ children }) => {
       <AppThemeProvider>
         <GlobalStyle />
         <Header />
-        <main>{children}</main>
+        <Main>{children}</Main>
+        <Footer />
       </AppThemeProvider>
     </StateProvider>
   )
@@ -259,6 +262,7 @@ const GlobalStyle = createGlobalStyle`
     text-rendering: optimizeLegibility;
     font-size: 2.25rem;
     line-height: 1.1;
+    letter-spacing: 1px;
   }
   h2 {
     margin-left: 0;
@@ -276,6 +280,7 @@ const GlobalStyle = createGlobalStyle`
     text-rendering: optimizeLegibility;
     font-size: 1.62671rem;
     line-height: 1.1;
+    letter-spacing: 1px;
   }
   h3 {
     margin-left: 0;
@@ -293,6 +298,7 @@ const GlobalStyle = createGlobalStyle`
     text-rendering: optimizeLegibility;
     font-size: 1.38316rem;
     line-height: 1.1;
+    letter-spacing: 1px;
   }
   h4 {
     margin-left: 0;
@@ -310,6 +316,7 @@ const GlobalStyle = createGlobalStyle`
     text-rendering: optimizeLegibility;
     font-size: 1rem;
     line-height: 1.1;
+    letter-spacing: 1px;
   }
   h5 {
     margin-left: 0;
@@ -327,6 +334,7 @@ const GlobalStyle = createGlobalStyle`
     text-rendering: optimizeLegibility;
     font-size: 0.85028rem;
     line-height: 1.1;
+    letter-spacing: 1px;
   }
   h6 {
     margin-left: 0;
@@ -344,6 +352,7 @@ const GlobalStyle = createGlobalStyle`
     text-rendering: optimizeLegibility;
     font-size: 0.78405rem;
     line-height: 1.1;
+    letter-spacing: 1px;
   }
   hgroup {
     margin-left: 0;
@@ -408,6 +417,7 @@ const GlobalStyle = createGlobalStyle`
     padding-right: 0;
     padding-top: 0;
     margin-bottom: 1.45rem;
+    letter-spacing: 0.5px;
   }
   figure {
     margin-left: 0;
