@@ -2,7 +2,9 @@ import React, { createContext, useContext } from "react"
 import createPersistedState from "use-persisted-state"
 
 const sessionStorage = () => {
-  if (typeof window !== undefined) return window.sessionStorage
+  if (typeof window !== undefined) {
+    return window.sessionStorage
+  }
 }
 
 const usePersistedState = createPersistedState("state", sessionStorage())
