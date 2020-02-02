@@ -5,7 +5,7 @@ import { social } from "../config"
 const Footer = () => {
   const renderSocial = () =>
     social.map(({ icon, link }) => (
-      <a href={link} target="_blank" rel="noopener noreferrer">
+      <a key={link} href={link} target="_blank" rel="noopener noreferrer">
         {icon}
       </a>
     ))

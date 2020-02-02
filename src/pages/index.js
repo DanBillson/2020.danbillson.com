@@ -10,7 +10,7 @@ import { title, timeline, projects, about } from "../config"
 
 const IndexPage = () => (
   <Layout>
-    <SEO />
+    <SEO title={`Home`} />
     <Hero title={title} />
     <Timeline timeline={timeline} />
     <Projects projects={projects} />

@@ -6,7 +6,7 @@ import Heading from "./heading"
 const Projects = ({ projects }) => {
   const renderProjects = () =>
     projects.map(({ icon, link }) => (
-      <a href={link} target="_blank" rel="noopener noreferrer">
+      <a key={link} href={link} target="_blank" rel="noopener noreferrer">
         {icon}
       </a>
     ))

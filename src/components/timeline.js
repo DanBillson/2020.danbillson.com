@@ -6,7 +6,7 @@ import Heading from "./heading"
 const Timeline = ({ timeline }) => {
   const renderTimeline = () =>
     timeline.map(({ title, date, body }) => (
-      <Time>
+      <Time key={title}>
         <div>
           <Title>{title}</Title>
           <Date>{date}</Date>
