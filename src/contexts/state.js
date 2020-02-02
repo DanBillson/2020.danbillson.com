@@ -1,7 +1,7 @@
 import React, { createContext, useContext } from "react"
 import createPersistedState from "use-persisted-state"
 
-const usePersistedState = createPersistedState("state", sessionStorage)
+const usePersistedState = createPersistedState("state", window.sessionStorage)
 
 export const StateContext = createContext()
 
