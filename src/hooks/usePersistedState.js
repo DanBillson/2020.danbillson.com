@@ -5,7 +5,6 @@ export const usePersistedState = (key, initialValue) => {
     try {
       const item =
         typeof window !== undefined && window.sessionStorage.getItem(key)
-      console.log(item)
       return item ? JSON.parse(item) : initialValue
     } catch (error) {
       console.error(error)
