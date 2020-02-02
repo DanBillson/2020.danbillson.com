@@ -7,6 +7,7 @@ export const usePersistedState = (key, initialValue) => {
         typeof window !== undefined && window.sessionStorage.getItem(key)
       return item ? JSON.parse(item) : initialValue
     } catch (error) {
+      console.error(error)
       return initialValue
     }
   })
@@ -18,7 +19,9 @@ export const usePersistedState = (key, initialValue) => {
       setStoredValue(valueToStore)
       typeof window !== undefined &&
         window.sessionStorage.setItem(key, JSON.stringify(valueToStore))
-    } catch (error) {}
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   return [storedValue, setValue]
