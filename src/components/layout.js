@@ -1,5 +1,5 @@
 import React from "react"
-import { createGlobalStyle } from "styled-components"
+import styled, { createGlobalStyle } from "styled-components"
 import Header from "./header"
 import Main from "./main"
 import Footer from "./footer"
@@ -11,9 +11,11 @@ const Layout = ({ children }) => {
     <StateProvider initialState={`dark`}>
       <AppThemeProvider>
         <GlobalStyle />
-        <Header />
-        <Main>{children}</Main>
-        <Footer />
+        <LayoutContainer>
+          <Header />
+          <Main>{children}</Main>
+          <Footer />
+        </LayoutContainer>
       </AppThemeProvider>
     </StateProvider>
   )
@@ -22,6 +24,14 @@ const Layout = ({ children }) => {
 export default Layout
 
 const globalFont = "Poppins"
+
+const LayoutContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: ${props => props.theme.bg};
+`
 
 const GlobalStyle = createGlobalStyle`
   html {

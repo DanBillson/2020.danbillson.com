@@ -1,36 +1,48 @@
 import React from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
 import { useStateValue } from "../contexts/state"
 import ScrollProgress from "./scrollProgress"
 import Sun from "../images/sun.svg"
 import Moon from "../images/moon.svg"
 
-const Header = () => {
+const ThemeIcon = props => {
   const [theme, setTheme] = useStateValue()
 
-  const renderThemeIcon = () =>
-    theme === "dark" ? (
-      <Sun onClick={() => setTheme("light")} />
-    ) : (
-      <Moon onClick={() => setTheme("dark")} />
-    )
+  return theme === "dark" ? (
+    <Sun onClick={() => setTheme("light")} {...props} />
+  ) : (
+    <Moon onClick={() => setTheme("dark")} {...props} />
+  )
+}
 
+const Header = () => {
   return (
-    <Container>
-      <Wrapper>
-        <Body>
-          <Logo>
-            DanBillson<Highlight>.</Highlight>
-          </Logo>
-          <Nav>{renderThemeIcon()}</Nav>
-        </Body>
-      </Wrapper>
-      <ScrollProgress />
-    </Container>
+    <>
+      <Container>
+        <Wrapper>
+          <Body>
+            <Logo to="/">
+              DanBillson<Highlight>.</Highlight>
+            </Logo>
+            <Nav>
+              <NavLink to="/cheer">cheer</NavLink>
+              <ThemeIcon />
+            </Nav>
+          </Body>
+        </Wrapper>
+        <ScrollProgress />
+      </Container>
+      <Block />
+    </>
   )
 }
 
 export default Header
+
+const Block = styled.div`
+  height: 96px;
+`
 
 const Container = styled.div`
   position: fixed;
@@ -46,6 +58,7 @@ const Wrapper = styled.header`
   transition: background-color 0.3s, color 0.3s;
 
   svg {
+    margin-left: 36px;
     width: 36px;
     fill: ${props => props.theme.fg};
     cursor: pointer;
@@ -68,9 +81,18 @@ const Body = styled.div`
 
 const Nav = styled.nav`
   display: flex;
+  align-items: center;
 `
 
-const Logo = styled.span`
+const NavLink = styled(Link)`
+  padding: 0 16px;
+  color: ${props => props.theme.fg};
+  text-decoration: none;
+`
+
+const Logo = styled(Link)`
+  color: ${props => props.theme.fg};
+  text-decoration: none;
   font-size: 36px;
   font-weight: 900;
 `
