@@ -16,7 +16,7 @@ const Cheer = () => {
         key={title}
         hidden={search && !title.toLowerCase().includes(search.toLowerCase())}
       >
-        <h3>{title}</h3>
+        <Title>{title}</Title>
         <Video video={video} />
       </VideoContainer>
     ))
@@ -75,6 +75,10 @@ const CheerGrid = styled.div`
       width: 47.5%;
     }
   }
+`
+
+const Title = styled.h3`
+  margin-left: 12px;
 `
 
 const VideoContainer = styled.div`

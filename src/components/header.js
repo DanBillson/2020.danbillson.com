@@ -23,7 +23,8 @@ const Header = () => {
         <Wrapper>
           <Body>
             <Logo to="/">
-              DanBillson<Highlight>.</Highlight>
+              D<LogoLong>anBillson</LogoLong>
+              <Highlight>.</Highlight>
             </Logo>
             <Nav>
               <NavLink to="/cheer">cheer</NavLink>
@@ -58,7 +59,7 @@ const Wrapper = styled.header`
   transition: background-color 0.3s, color 0.3s;
 
   svg {
-    margin-left: 36px;
+    margin-left: 12px;
     width: 36px;
     fill: ${props => props.theme.fg};
     cursor: pointer;
@@ -95,6 +96,14 @@ const Logo = styled(Link)`
   text-decoration: none;
   font-size: 36px;
   font-weight: 900;
+`
+
+const LogoLong = styled.span`
+  display: none;
+
+  @media screen and (min-width: 768px) {
+    display: inline;
+  }
 `
 
 const Highlight = styled.span`

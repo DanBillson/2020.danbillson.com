@@ -26,7 +26,7 @@ const Label = styled.label`
 const TextInput = styled.input`
   margin: 8px 0 32px;
   padding: 8px 16px;
-  width: 320px;
+  max-width: 320px;
   border: ${props => `1px solid ${props.theme.fg}`};
   border-radius: 30px;
 `

@@ -6,7 +6,12 @@ export default styled.div`
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  padding: 30px 5%;
-  width: 90%;
+  padding: 30px 0;
+  width: 100%;
   max-width: 1600px;
+
+  @media screen and (min-width: 400px) {
+    padding: 30px 5%;
+    width: 90%;
+  }
 `
