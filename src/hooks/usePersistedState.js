@@ -1,18 +1,27 @@
 import { useState } from "react"
 
-const isBrowser = () => typeof window !== undefined
-
 export const usePersistedState = (key, initialValue) => {
   const [storedValue, setStoredValue] = useState(() => {
-    return isBrowser() && window.sessionStorage.getItem(key)
-      ? JSON.parse(isBrowser() && window.sessionStorage.getItem(key))
-      : initialValue
+    try {
+      const item =
+        typeof window !== undefined && window.sessionStorage.getItem(key)
+      return item ? JSON.parse(item) : initialValue
+    } catch (error) {
+      console.error(error)
+      return initialValue
+    }
   })
 
   const setValue = value => {
-    const valueToStore = value instanceof Function ? value(storedValue) : value
-    setStoredValue(valueToStore)
-    window.sessionStorage.setItem(key, JSON.stringify(valueToStore))
+    try {
+      const valueToStore =
+        value instanceof Function ? value(storedValue) : value
+      setStoredValue(valueToStore)
+      typeof window !== undefined &&
+        window.sessionStorage.setItem(key, JSON.stringify(valueToStore))
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   return [storedValue, setValue]
