@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 import Wrapper from "../components/wrapper"
 import Heading from "../components/heading"
 import Search from "../components/search"
@@ -29,6 +30,7 @@ const Cheer = () => {
 
   return (
     <Layout>
+      <SEO title={`Cheer`} />
       <Wrapper>
         <Heading>Cheer Archive</Heading>
         <CheerSearch
