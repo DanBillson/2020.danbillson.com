@@ -76,6 +76,7 @@ const GlobalStyle = createGlobalStyle`
     display: none;
   }
   a {
+    font-family: ${globalFont}, sans-serif;
     background-color: transparent;
     -webkit-text-decoration-skip: objects;
   }
