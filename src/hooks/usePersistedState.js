@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react"
 
 const getState = (key, initialValue) => {
-  return typeof window !== undefined && window.sessionStorage.getItem(key)
-    ? JSON.parse(window.sessionStorage.getItem(key))
-    : initialValue
+  const state =
+    typeof window !== undefined && window.sessionStorage.getItem(key)
+  return state ? JSON.parse(state) : initialValue
 }
 
 export const usePersistedState = (key, initialValue) => {
