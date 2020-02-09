@@ -1,12 +1,15 @@
-import React, { useLayoutEffect } from "react"
+import React, { useState, useLayoutEffect } from "react"
 import { ThemeProvider } from "styled-components"
 import { useStateValue } from "./state"
 import { themes } from "../config/themes"
 
 export const AppThemeProvider = ({ children }) => {
-  const [theme] = useStateValue()
+  const [state] = useStateValue()
+  const [theme, setTheme] = useState(themes[state])
 
-  useLayoutEffect(() => {}, [theme])
+  useLayoutEffect(() => {
+    setTheme(themes[state])
+  }, [state])
 
-  return <ThemeProvider theme={themes[theme]}>{children}</ThemeProvider>
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>
 }
