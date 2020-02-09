@@ -1,19 +1,17 @@
 import { useState, useEffect } from "react"
 
-const getState = (key, initialValue) => {
-  const state =
-    typeof window !== undefined && window.sessionStorage.getItem(key)
-  return state ? JSON.parse(state) : initialValue
-}
-
 export const usePersistedState = (key, initialValue) => {
-  const [storedValue, setStoredValue] = useState(() =>
-    getState(key, initialValue)
-  )
+  const getState = () => {
+    const state =
+      typeof window !== undefined && window.sessionStorage.getItem(key)
+    return state ? JSON.parse(state) : initialValue
+  }
+
+  const [storedValue, setStoredValue] = useState(() => getState())
 
   useEffect(() => {
-    setStoredValue(getState(key, initialValue))
-  }, [key, initialValue])
+    setStoredValue(getState())
+  }, [getState])
 
   const setValue = value => {
     try {
