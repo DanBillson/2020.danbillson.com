@@ -1,23 +1,24 @@
-import { useState, useEffect, useCallback } from "react"
+import { useState, useEffect } from "react"
+import useSwr from "swr"
+
+const getSessionStorage = (key, initialValue) => {
+  try {
+    const state =
+      typeof window !== undefined && window.sessionStorage.getItem(key)
+    return state ? JSON.parse(state) : initialValue
+  } catch (error) {
+    return initialValue
+  }
+}
+
+const useSessionStorage = (key, initialValue) =>
+  useSwr([key, initialValue], getSessionStorage)
 
 export const usePersistedState = (key, initialValue) => {
-  const getState = useCallback(() => {
-    try {
-      const state =
-        typeof window !== undefined && window.sessionStorage.getItem(key)
-      return state ? JSON.parse(state) : initialValue
-    } catch (error) {
-      console.error(error)
-      return initialValue
-    }
-  }, [key, initialValue])
-
-  const [storedValue, setStoredValue] = useState(() => getState())
-
-  useEffect(() => {
-    setStoredValue(getState())
-    console.log(getState())
-  }, [getState])
+  const ssState = getSessionStorage(key, initialValue)
+  const { data } = useSessionStorage(key, initialValue)
+  console.log({ ssState, data })
+  const [storedValue, setStoredValue] = useState(ssState)
 
   const setValue = value => {
     try {
