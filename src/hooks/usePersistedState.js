@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 
 export const usePersistedState = (key, initialValue) => {
-  const getState = () => {
+  const getState = useCallback(() => {
     try {
       const state =
         typeof window !== undefined && window.sessionStorage.getItem(key)
@@ -10,12 +10,13 @@ export const usePersistedState = (key, initialValue) => {
       console.error(error)
       return initialValue
     }
-  }
+  }, [key, initialValue])
 
   const [storedValue, setStoredValue] = useState(() => getState())
 
   useEffect(() => {
     setStoredValue(getState())
+    console.log(getState())
   }, [getState])
 
   const setValue = value => {
