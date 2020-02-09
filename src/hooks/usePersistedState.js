@@ -2,9 +2,13 @@ import { useState, useEffect } from "react"
 
 export const usePersistedState = (key, initialValue) => {
   const getState = () => {
-    if (typeof window !== undefined) {
-      const state = window.sessionStorage.getItem(key)
+    try {
+      const state =
+        typeof window !== undefined && window.sessionStorage.getItem(key)
       return state ? JSON.parse(state) : initialValue
+    } catch (error) {
+      console.error(error)
+      return initialValue
     }
   }
 
