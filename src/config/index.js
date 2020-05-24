@@ -2,6 +2,7 @@ import React from "react"
 import Moola from "../images/moola.svg"
 import DoublDown from "../images/doubldown.svg"
 import PowerNation from "../images/powernation.svg"
+import Porkchop from "../images/porkchop.svg"
 import Github from "../images/github.svg"
 import Instagram from "../images/instagram.svg"
 import Linkedin from "../images/linkedin.svg"
@@ -52,6 +53,10 @@ export const projects = [
   {
     icon: <DoublDown />,
     link: `https://doubldown.com`,
+  },
+  {
+    icon: <Porkchop />,
+    link: `https://porkchop.netlify.app`,
   },
 ]
 
