@@ -6,7 +6,7 @@ export default styled.div`
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  padding: 30px 0;
+  padding: 30px 1rem;
   width: 100%;
   max-width: 1600px;
 
