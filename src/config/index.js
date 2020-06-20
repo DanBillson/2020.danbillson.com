@@ -48,7 +48,7 @@ export const projects = [
   },
   {
     icon: <PowerNation />,
-    link: `https://www.powernationcheer.com`,
+    link: `https://powernationcheer.netlify.app/`,
   },
   {
     icon: <DoublDown />,
