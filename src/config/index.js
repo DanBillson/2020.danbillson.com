@@ -44,7 +44,7 @@ export const timeline = [
 export const projects = [
   {
     icon: <Moola />,
-    link: `https://moola.wtf`,
+    link: `https://moola.netlify.app`,
   },
   {
     icon: <PowerNation />,
