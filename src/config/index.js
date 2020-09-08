@@ -6,6 +6,7 @@ import Porkchop from "../images/porkchop.svg"
 import Github from "../images/github.svg"
 import Instagram from "../images/instagram.svg"
 import Linkedin from "../images/linkedin.svg"
+import Medium from "../images/medium.svg"
 
 export const navigation = [
   {
@@ -77,6 +78,10 @@ export const social = [
   {
     icon: <Linkedin />,
     link: `https://www.linkedin.com/in/danielbillson/`,
+  },
+  {
+    icon: <Medium />,
+    link: `https://medium.com/@danielbillson`,
   },
 ]
 
