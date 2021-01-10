@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import Wrapper from "./wrapper"
 import Heading from "./heading"
 
 const Projects = ({ projects }) => {
@@ -12,10 +11,10 @@ const Projects = ({ projects }) => {
     ))
 
   return (
-    <Wrapper>
+    <>
       <Heading>Projects</Heading>
       <ProjectsWrapper>{renderProjects()}</ProjectsWrapper>
-    </Wrapper>
+    </>
   )
 }
 

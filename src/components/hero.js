@@ -52,6 +52,7 @@ const DevImage = styled(Dev)`
   max-width: 400px;
   right: 10%;
   bottom: -5%;
+  z-index: 0;
 
   @media only screen and (min-width: 768px) {
     right: 15%;

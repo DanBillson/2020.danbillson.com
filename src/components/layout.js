@@ -559,7 +559,7 @@ const GlobalStyle = createGlobalStyle`
     padding-left: 0;
   }
   ul li {
-    padding-left: 0;
+    padding-left: 0.5rem;
   }
   li > ol {
     margin-left: 1.45rem;

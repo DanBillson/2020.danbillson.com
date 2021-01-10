@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import Wrapper from "./wrapper"
 import Heading from "./heading"
 
 const Timeline = ({ timeline }) => {
@@ -16,10 +15,10 @@ const Timeline = ({ timeline }) => {
     ))
 
   return (
-    <Wrapper>
+    <>
       <Heading>Professional</Heading>
       {renderTimeline()}
-    </Wrapper>
+    </>
   )
 }
 

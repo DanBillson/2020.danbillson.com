@@ -27,6 +27,7 @@ const Header = () => {
               <Highlight>.</Highlight>
             </Logo>
             <Nav>
+              <NavLink to="/media">media</NavLink>
               <NavLink to="/cheer">cheer</NavLink>
               <ThemeIcon />
             </Nav>

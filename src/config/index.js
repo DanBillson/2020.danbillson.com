@@ -43,7 +43,7 @@ export const timeline = [
   {
     title: `Climb`,
     date: `2020 - Present`,
-    body: `After moving back up north I joined another small dev team at Climb Creative who are part of the Precision Proco Group, a huge part of printing across the country. With this new line of business comes lots of new challenges and exciting projects to work on all with a very hands on approach.`,
+    body: `After moving back up north, I joined another small dev team at Climb Creative who are part of the Precision Proco Group, a huge part of printing across the country. With this new line of business came lots of new challenges and exciting projects to work on all with a very hands on approach.`,
   },
 ]
 
@@ -141,3 +141,36 @@ export const cheerArchive = [
     video: `https://www.youtube.com/watch?v=4VmvaqKoGTY`,
   },
 ]
+
+export const media = {
+  title: "Media",
+  body: `This page probably isn't quite what you were expecting, it's not portfolio of any photography of graphic design but rather a list of the different type of media I have consumed of the year. The inspiration comes from one of my good friends and old colleague, Ben Farr.`,
+  list: {
+    January: {
+      films: [
+        { title: "Soul", info: "(2020)", emoji: "🎷" },
+        {
+          title: "Guardians of the Galaxy",
+          info: "(2014)",
+          emoji: "📼",
+        },
+        {
+          title: "Guardians of the Galaxy Vol. 2",
+          info: "(2017)",
+          emoji: "🪴",
+        },
+      ],
+      games: [
+        { title: "Taiko no Tatsujin", info: "Switch", emoji: "🥁" },
+        { title: "Ring Fit Adventure", info: "Switch", emoji: "💪" },
+      ],
+      books: [
+        {
+          title: "Why the Dutch are different",
+          info: "- Ben Coates",
+          emoji: "🇳🇱",
+        },
+      ],
+    },
+  },
+}

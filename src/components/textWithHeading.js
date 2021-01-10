@@ -1,14 +1,13 @@
 import React from "react"
 import styled from "styled-components"
-import Wrapper from "./wrapper"
 import Heading from "./heading"
 
 const TextWithHeading = ({ title, body }) => {
   return (
-    <Wrapper>
+    <>
       <Heading>{title}</Heading>
       <Body>{body}</Body>
-    </Wrapper>
+    </>
   )
 }
 
