@@ -64,7 +64,7 @@ const Wrapper = styled.header`
     width: 36px;
     fill: ${props => props.theme.fg};
     cursor: pointer;
-    tranisition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
 
     &:hover {
       fill: ${props => props.theme.secondary};

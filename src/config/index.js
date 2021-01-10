@@ -144,7 +144,7 @@ export const cheerArchive = [
 
 export const media = {
   title: "Media",
-  body: `This page probably isn't quite what you were expecting, it's not portfolio of any photography of graphic design but rather a list of the different type of media I have consumed of the year. The inspiration comes from one of my good friends and old colleague, Ben Farr.`,
+  body: `This page probably isn't quite what you were expecting, it's not portfolio of any photography of graphic design but rather a list of the different type of media I have consumed over the year. The inspiration comes from one of my good friends and old colleague, Ben Farr.`,
   list: {
     January: {
       films: [
