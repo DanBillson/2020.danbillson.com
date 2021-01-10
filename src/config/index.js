@@ -37,8 +37,13 @@ export const timeline = [
   },
   {
     title: `Marmalade`,
-    date: `2019 - Present`,
+    date: `2019 - 2020`,
     body: `Contrary to The Hut Group, Marmalade has a much smaller dev team meaning that there is much room for advancing technologies, impactful changes and responsibility. As a team we have worked with Gatsby, Lerna monorepos and the latest in React.`,
+  },
+  {
+    title: `Climb`,
+    date: `2020 - Present`,
+    body: `After moving back up north I joined another small dev team at Climb Creative who are part of the Precision Proco Group, a huge part of printing across the country. With this new line of business comes lots of new challenges and exciting projects to work on all with a very hands on approach.`,
   },
 ]
 
