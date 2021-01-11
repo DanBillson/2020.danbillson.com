@@ -159,6 +159,11 @@ export const media = {
           info: "(2017)",
           emoji: "🪴",
         },
+        {
+          title: "The Peanut Butter Falcon",
+          info: "(2019)",
+          emoji: "🦅",
+        },
       ],
       games: [
         { title: "Taiko no Tatsujin", info: "Switch", emoji: "🥁" },
